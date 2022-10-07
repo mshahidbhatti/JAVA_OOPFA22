@@ -9,7 +9,17 @@ public class Product {
     private Date manfacturingDate;
     private int quantity;
     private String description;
-      static int productCounter=1;
+    static int productCounter=1;
+
+    public boolean equals(Object other){
+        Product otherProduct=(Product)other;
+        return this.productID.equalsIgnoreCase(otherProduct.productID);
+    }
+    public Object clone(){
+        Product temp=new Product(this.name,this.price,new Date(this.manfacturingDate.getDay(),this.manfacturingDate.getMonth(),this.manfacturingDate.getYear()),this.quantity,this.description);
+
+        return temp;
+    }
 
     public Product(String name, double price, Date manfacturingDate, int quantity, String description) {
         productCounter++;
@@ -85,9 +95,5 @@ public class Product {
                 '}';
     }
 
-    public boolean equals(Object other){
-
-        return false;
-    }
 
 }

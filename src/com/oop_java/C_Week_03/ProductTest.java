@@ -4,6 +4,7 @@ import com.oop_java.C_Week02.Date;
 
 public class ProductTest {
     public static Product productList[]=new Product[100];
+    public static Product productList2[]=new Product[100];
 
     public static void main(String[] args) {
 
@@ -13,6 +14,10 @@ public class ProductTest {
         productList[1].setDescription("Long text description");
         productList[2]=new Product("Keyboard",500,new Date(1,1,2022));
         productList[2].setDescription("Long text description");
+
+
+        productList2=productList;
+        Product obj=(Product) productList[0].clone();
 
         System.out.println(productList[0].productCounter);
         System.out.println(productList[1].productCounter);
