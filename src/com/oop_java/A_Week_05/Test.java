@@ -21,23 +21,23 @@ public class Test {
                 System.out.println(filesNames[i]);
         }
 
+
         System.out.println(file.isDirectory());
         System.out.println(file2.exists());
 
-
-      //  file2.createNewFile();
+       // file2.createNewFile();
        // file2.mkdir();
 
 
 
-        com.oop_java.A_Week_05.Test t = new com.oop_java.A_Week_05.Test();
 
-
-
+        Test t = new Test();
         Class tClass =t.getClass();
 
         System.out.println(tClass.getName());
-        //tClass.getSimpleName()
+
+        System.out.println(tClass.getSimpleName());
+
 
 
         Method[] methods = tClass.getDeclaredMethods();
@@ -62,10 +62,23 @@ public class Test {
 
             for(int j=0;j<methods1.length;j++) {
 
-                System.out.println(methods1[j].toString().substring(methods1[j].toString().indexOf("File"),methods1[j].toString().length()));
+               // System.out.println(methods1[j].toString().substring(methods1[j].toString().indexOf("File"),methods1[j].toString().length()));
                 //System.out.println(methods1[j].toString().substring(0,10));
+               int  tempIndex=methods1[j].toString().indexOf(class1.getSimpleName());
+
+               String temp=methods1[j].toString().substring(tempIndex);
+
+
+                System.out.println(temp);
             }
 
+
         }
+
+
+    }
+
+    public static void method1(){
+
     }
 }
